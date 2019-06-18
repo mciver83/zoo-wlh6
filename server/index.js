@@ -6,7 +6,7 @@ const app = express()
 const port = 4000
 
 app.use(express.json())
-
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.get('/api/animals', AnimalCtrl.read)
 app.post('/api/animals', AnimalCtrl.create)
